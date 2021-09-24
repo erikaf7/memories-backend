@@ -56,7 +56,8 @@ app.get('/', (req, res, next) => {
 /*
 Controllers code here
 */
-
+const booksController = require('./controllers/books')
+app.use('/books/', booksController)
 
 app.listen(PORT, () => {
   console.log(`✅ PORT: ${PORT} 🌟`)
