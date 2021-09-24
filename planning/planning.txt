@@ -1,0 +1,64 @@
+Technical Requirements
+
+Back-End Requirements:
+
+Your back-end must be a Node, Express, and Mongoose API with at least 1 non-user models. No associations are required.
+You must have Create, Read, Update, and Destroy functionality built throughout the app (i.e. You don't need full CRUD on every model, just full CRUD throughout your models where it makes sense).
+Front-End Requirements:
+
+Your front-end must use React and leverage the backend API in the above requirements.
+You must communicate with the back-end API RESTfully to Create, Read, Update, and Destroy resources (using either fetch or axios).
+You must use either CSS Grid or Flexbox along with media queries to make your app responsive across mobile, tablet, and desktop widths.
+You must have at least 4 components
+Project Requirements:
+
+You must include a planning/ directory that sufficiently demonstrates your team's planning process.
+Both your front-end and back-end repos have a README that adequately documents the project.
+Every team member must have roughly the same number of individual commits in the commit history for your app (dividing responsibilities between different parts of the app is fine, but every team member must have commits in the project).
+Every team must follow a Git Workflow
+Every team member must speak for roughly the same amount of time during the group presentation
+
+Deployment Requirements:
+
+Your back-end/API must be deployed to Heroku and your front-end must be deployed to Heroku. Applications that are not deployed will be considered incomplete.
+
+DO NOT FORK THIS REPOSITORY! Create two repositories. Then, submit your project to Google Classroom when complete.
+
+Your team must turn in something before presentations begin. However, you are welcome to continue working on it over the course of SEI and beyond!
+
+Deliverables:
+
+Project Proposal
+
+Designate a scrum master for your team. The scrum master will act as the project manager for the team and run daily standups to ensure the team is aligned on the most important priorities and deadlines. He/she/they will also ensure that the work of every individual contributor on the team is integrated into a single, coherent application.
+
+By the deadline specified in the course schedule, you need to submit:
+
+Your project idea (a brief 2-3 sentence description of your app)
+A list of your models and their properties
+Scrum master/project manager's name
+Planning assets (wireframes, user stories, etc)
+
+Final Application
+
+Your project is due on the last day of Project Week. It must be submitted to Google Classroom with:
+
+A link to your deployed application
+A link to your Project 3 Github repositories (Do not fork this repo)
+The repository for your backend API should include:
+
+A working JSON API (built by your team) built using Express and Mongoose that meets the technical requirements above.
+Frequent commits dating back to the very beginning of the project for EVERY member of the team. Make sure that if you're using a paired or mob programming model that every contributor is listed in the commit. Follow the documentation to learn how to create a commit with multiple authors.
+A README.md file in the root of your repo that follows good standards of documentation (i.e. explanations of the technologies used, the approach taken, features, installation instructions, unsolved problems, etc.)
+A link to your hosted, working API in the URL section of your Github repo:
+
+The repository for the frontend of your application should include:
+
+A working frontend application (built by your team) built with React and React Router that meets the technical requirements above.
+Frequent commits dating back to the very beginning of the project.
+A README.md file in the root of your repo that follows good standards of documentation (i.e. explanations of the technologies used, the approach taken, features, installation instructions, unsolved problems, etc.)
+A link to your hosted, working application in the URL section of your Github repo:
+
+
+
+Placeholder image: https://images.pexels.com/photos/2099528/pexels-photo-2099528.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
