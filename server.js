@@ -8,12 +8,20 @@ const PORT = process.env.PORT || 3000;
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongo not running?'));
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
 
+
+mongoose.connect('mongodb://localhost:27017/bookmarks', { useNewUrlParser: true})
+mongoose.connection.once('open', () => {
+    console.log('connected to mongoose!')
+  })
 /*
 Mongoose conection code here, waiting on the set up of the database
 */
 
+//importing schema
+const Book = require('./models/Book')
 
-//corsconst whitelist = ['http://localhost:3000']
+//cors
+const whitelist = ['http://localhost:3000']
 const corsOptions = {
     origin: function (origin, callback) {
       if (whitelist.indexOf(origin) !== -1) {
@@ -44,7 +52,8 @@ Seed route here
 /*
 Controllers code here
 */
-
+const booksController = require('./controllers/books')
+app.use('/books/', booksController)
 
 
 app.listen(PORT, () => {

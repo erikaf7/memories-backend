@@ -6,7 +6,9 @@ const Book = require('../models/Book');
 
 //index
 books.get('/', (req, res, next) => {
-    //code here
+    Book.find({})
+    .then(books => res.status(200).send(books))
+    .catch(next)
 })
 
 //show
