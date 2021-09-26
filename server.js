@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const books = require('./controllers/books');
-const Book = require('./models/Book')
+// const books = require('./controllers/books');
+const Entry = require('./models/Entry')
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -41,23 +41,23 @@ app.use(express.urlencoded({ extended: true }));
 
 //seed route
 app.get('/seed-data', (req, res, next) => {
-  Book.insertMany(seeds)
+  Entry.insertMany(seeds)
     .then((res) => console.log(res))
     .catch(next)
   res.send('Seed entries inserted.')
 })
 
 app.get('/', (req, res, next) => {
-  Book.find({})
-    .then(books => res.json(books))
+  Entry.find({})
+    .then(entries => res.json(entries))
     .catch(next)
 })
 
 /*
 Controllers code here
 */
-const booksController = require('./controllers/books')
-app.use('/books/', booksController)
+const entriesController = require('./controllers/entries')
+app.use('/entries/', entriesController)
 
 app.listen(PORT, () => {
   console.log(`✅ PORT: ${PORT} 🌟`)
