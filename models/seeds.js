@@ -1,4 +1,4 @@
-const entries = [
+const seeds = [
     {
         title: 'road trip',
         img: 'https://images.pexels.com/photos/3095541/pexels-photo-3095541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -21,4 +21,4 @@ const entries = [
     },
 ]
 
-module.exports = entries
+module.exports = seeds
