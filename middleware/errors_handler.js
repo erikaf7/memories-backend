@@ -1,5 +1,14 @@
 const mongoose = require('mongoose');
 
+class OwnershipError extends Error {
+    constructor() {
+        super();
+        this.name = 'ownerShipError';
+        this.statusCode = 401;
+        this.message = 'The token provided does not match our records'
+    }
+}
+
 
 class BadParamsError extends Error {
     constructor() {
@@ -7,6 +16,24 @@ class BadParamsError extends Error {
         this.name = 'BadParamsError';
         this.statusCode = 422;
         this.message = 'A required parameter was omitted or invalid'
+    }
+}
+
+class BadCredentialsError extends Error {
+    constructor() {
+        super();
+        this.name = 'BadCredentialsError'
+        this.statusCode = 422;
+        this.message = 'The provided username or password is incorrect';
+    }
+}
+
+class DocumentNotFoundError extends Error {
+    constructor() {
+        super();
+        this.name = 'DocumentNotFoundError';
+        this.statusCode = 404;
+        this.message = 'There is no documents related to the ID provided'
     }
 }
 
@@ -19,6 +46,23 @@ class InvalidIdError extends Error {
     }
 }
 
+const handleValidateOwnership = (req, document) => {
+    const ownerId = document.owner._id || document.owner;
+    //check if the current user is also the owner ofthe document
+    if (!req.user._id.equals(ownerId)) {
+        throw new OwnerShipError()
+    } else {
+        return document;
+    }
+}
+
+const handleRecordExists = (record) => {
+    if (!record) {
+        throw new DocumentNotFoundError();
+    } else {
+        return record;
+    }
+}
 
 
 const handleValidateId = (req, res, next) => {
@@ -29,6 +73,8 @@ const handleValidateId = (req, res, next) => {
         next();
     }
 }
+
+
 
 const handleValidationErrors = (error, req, res, next) => {
     if (error.name.match(/Valid/) || error.name === 'MongoError') {
@@ -48,5 +94,7 @@ module.exports = {
     handleValidateId,
     handleValidationErrors,
     handleErrors,
+    handleRecordExists,
+    handleValidateOwnership,
 
 }
