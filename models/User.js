@@ -14,6 +14,15 @@ const userSchema = new mongoose.Schema(
     },
     {
         timestamps: true,
+        toJSON: {
+            virtual: true,
+            //ret is the returne mongoose doc
+            transform: (_doc, ret) => {
+                //deleten and keeping the password out of the returned document
+                delete ret.password;
+                return ret;
+            }
+        }
     }
 )
 
