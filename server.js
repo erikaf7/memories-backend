@@ -6,6 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/scrapbook'
 // mongoose configuration
+
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongo not running?'));
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
 
