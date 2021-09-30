@@ -25,7 +25,7 @@ This back-end API is hosted on https://app-memories-backend.herokuapp.com/. To v
 - Node
 
 ## Approach Taken
-We created this database to store the data of the user entries and user accounts to be accessed by the front-end side of our application. We used user authorization to make sure that posts could only be edited or deleted by the user who created them.
+We created this database to store the data of the memory entries to be accessed by the front-end side of our application. The front-end side of our application can interact with our database in order to create entries, read entries, update entries, and delete entries.
 
 
 
