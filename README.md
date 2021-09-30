@@ -14,7 +14,7 @@ Created by Alli Moss, Erika Fomich, and Daimel Moreno.
 This is the back-end side of the memories application. Memories is a scrapbooking application where you create the story. Add scrap book entries and share your memories with others. To view the repository for the front-end side of the memories application, go to https://github.com/erikaf7/memories-frontend.
 
 ## Getting Started
-This back-end application is hosted on https://app-memories-backend.herokuapp.com/. To view the front-end, user accessible application, go to https://app-memories-frontend.herokuapp.com/.
+This back-end API is hosted on https://app-memories-backend.herokuapp.com/. To view the front-end, user accessible application, go to https://app-memories-frontend.herokuapp.com/.
 
 
 ## Technologies Used
