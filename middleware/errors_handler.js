@@ -96,5 +96,5 @@ module.exports = {
     handleErrors,
     handleRecordExists,
     handleValidateOwnership,
-
+    OwnershipError,
 }
