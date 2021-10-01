@@ -7,6 +7,7 @@ const Entry = require('../models/Entry');
 //index
 entries.get('/', (req, res, next) => {
     Entry.find({})
+        .populate('owner')
         .then(entries => res.status(200).send(entries))
         .catch(next)
 })
@@ -14,6 +15,7 @@ entries.get('/', (req, res, next) => {
 //show
 entries.get('/:id', (req, res, next) => {
     Entry.findById(req.params.id)
+        .populate('owner')
         .then(foundEntry => res.status(200).send(foundEntry))
         .catch(next)
 })
